@@ -12,7 +12,6 @@ class Manager:
         self.model = IndexPrices
 
     async def create_price(self, price: Price) -> bool:
-        print("я здесь")
         async with self.db.session_factory() as session:
             new_data_price = self.model(**price.model_dump())
 
